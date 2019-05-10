@@ -175,7 +175,7 @@
     };
 
     Filelisting.prototype.initFilter = function() {
-        this.$filter = $('<br><label>' + this.options.filterLabel + ': <input></label><br><br>').appendTo(this.$capiton);
+        this.$filter = $('<label>' + this.options.filterLabel + ': <input></label>').appendTo(this.$footer);
 
         //filter has changed, update content
         this.$filter.find('input').on('keyup', $.proxy(this.applyFilter, this));
@@ -348,9 +348,9 @@
 
     $.fn.dokuwiki_plugin_filelisting.defaults = {
         //label for visible list
-        toggleVisible: '?',
+        toggleVisible: '▼',
         //label for hidden list
-        toggleHidden: '?',
+        toggleHidden: '▲',
         //id of the current wiki page
         pageId: '',
         defaultToggle: 'visible',
@@ -365,9 +365,9 @@
         //label of filter input
         filterLabel: 'Filter',
         //sort ascending label
-        sortAsc: '?',
+        sortAsc: '↓',
         //sort descending label
-        sortDesc: '?',
+        sortDesc: '↑',
         //confirm file deletion
         deleteConfirm: LANG.plugins.filelisting.delete_confirm
     };
